@@ -1,0 +1,5 @@
+ create a calcutor object that adds, subtract, divide ,multiply
+ create a function that performs calculations when button is clicked
+ create a function to display result in monitor
+ Reset button with button ac
+ 
