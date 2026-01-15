@@ -12,32 +12,27 @@ const sign = document.querySelector("#sign")
 
 //create calculator object
 
-class Calculation ={
-    constructor(firstNum, operator, secondNum){
+class Calculation {
+
+    constructor(firstNum,  secondNum ,operator,){
         this.firstNum = firstNum;
-        this.secondNum = firstNum;
+        this.secondNum = secondNum;
         this.operator = {
         "-": (a, b) => a - b,
         "+": (a, b) => a + b,
         "/": (a, b) => a / b,
         "*": (a, b) => a * b,
         "**": (a, b) => a ** b,
-        "+/-": a => a === a? -a : a,
+        "+/-": a => a === a ? -a : a,
         "%": a => a/100
-  };
+     }
     
-    }
+    };}
 
     //funtion that performs calculation
-function Calculator() {
-
-  this.methods = {
-    "-": (a, b) => a - b,
-    "+": (a, b) => a + b
-  };
 
   let calc = new Calculation(firstNum, operator, secondNum)
 
    function populateScreen(){
-    
+    let display = "";
    } 
