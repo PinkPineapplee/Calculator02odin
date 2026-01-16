@@ -26,7 +26,7 @@ class Calculation {
         "+/-": a => a === a ? -a : a,
         "%": a => a/100
      }
-    
+     
     };}
 
    
@@ -38,7 +38,7 @@ class Calculation {
     screen.textContent = display;
     buttons.addEventListener("click", (e)=> { 
      display += e.target.value
-     return display
+     
     })
     console.log(display);
    return display;
@@ -57,5 +57,11 @@ class Calculation {
 
    function getNumberInString(){
     let value = populateScreen();
-    let valueArray = value.map()
+    let valueArray = [];
+    // split string at symbol
+    let symbols = ["+","-","/","*"]
+      valueArray = value.split(value.includes(symbols))
+    
+
+    return valueArray
    }
