@@ -40,5 +40,6 @@ class Calculation {
      display += e.target.value
      return display
     })
-
+    console.log(display);
+   return display;
    } populateScreen()
