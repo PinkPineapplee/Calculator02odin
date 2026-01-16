@@ -3,3 +3,10 @@
     justify-content: center;
     align-items: center;
  }
+
+ .calculator{
+    width: 30vw;
+    height: 60vh;
+    background-color: aqua;
+    border: 1ch rgb(83, 83, 226) solid;
+ }
