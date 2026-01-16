@@ -35,4 +35,10 @@ class Calculation {
 
    function populateScreen(){
     let display = "";
-   } 
+    screen.textContent = display;
+    buttons.addEventListener("click", (e)=> { 
+     display += e.target.value
+     return display
+    })
+
+   } populateScreen()
