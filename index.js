@@ -9,7 +9,7 @@ const percent = document.querySelector("#percent");
 const screen = document.querySelector("#monitor")
 const sign = document.querySelector("#sign")
 
-
+let calculatorStart = false;
 //create calculator object
 
 class Calculation {
@@ -29,9 +29,9 @@ class Calculation {
     
     };}
 
-    //funtion that performs calculation
+   
 
-  let calc = new Calculation(firstNum, operator, secondNum)
+  
 
    function populateScreen(){
     let display = "";
@@ -42,4 +42,20 @@ class Calculation {
     })
     console.log(display);
    return display;
-   } populateScreen()
+   }
+
+
+
+   function getCalculation(){
+    ac.addEventListener("click", ()=>{
+       calculatorStart = true
+    
+    
+   let calc = new Calculation(firstNum, operator, secondNum)
+    })
+   }
+
+   function getNumberInString(){
+    let value = populateScreen();
+    let valueArray = value.map()
+   }
