@@ -49,9 +49,9 @@ class Calculation {
    function getCalculation(){
     ac.addEventListener("click", ()=>{
        calculatorStart = true
+    let valueArray = getNumberInString();
     
-    
-   let calc = new Calculation(firstNum, operator, secondNum)
+   let calc = new Calculation(valueArray[0], valueArray[1], valueArray[2])
     })
    }
 
@@ -60,8 +60,8 @@ class Calculation {
     let valueArray = [];
     // split string at symbol
     let symbols = ["+","-","/","*"]
-      valueArray = value.split(value.includes(symbols))
+      valueArray = value.split(value.includes(symbols));
     
-
+      console.log(valueArray);
     return valueArray
    }
