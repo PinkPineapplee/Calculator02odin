@@ -52,9 +52,20 @@ class Calculation {
    function populateScreen(){
     let display = "";
     screen.textContent = " ";
-    buttons.addEventListener("click", (e)=> { 
+     
+    //add eventlistener to buttons and display their results in screen
+    buttons.forEach((btn)=> {
+
+    btn.addEventListener("click", (e)=> { 
+
+      if(btn !== "%" || btn !== "+/-"){
      display += e.target.value;
      screen.textContent = display;
+     }
+    });
+    });
+    // display result of calculation when you click equals sign.
+     equals.addEventListener("click", ()=>{
      screen.textconent = getCalculation();
     })
     console.log(display);
