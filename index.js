@@ -67,8 +67,8 @@ class Calculation {
       screen.textContent = display;
       
       //make display values as arguments inside calculation class
-      result = new Calculation.calculate(display);
-
+      let calc = new Calculation();
+        result = calc.calculate(display);
       });
       });
 
