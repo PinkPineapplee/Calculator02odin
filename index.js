@@ -49,14 +49,11 @@ class Calculation {
 
    
 
-  
-
    function populateScreen(){
     let display = "";
     screen.textContent = display;
     buttons.addEventListener("click", (e)=> { 
      display += e.target.value;
-     
     })
     console.log(display);
    return display;
@@ -66,20 +63,11 @@ class Calculation {
 
    function getCalculation(){
     ac.addEventListener("click", ()=>{
-       calculatorStart = true
-    let valueArray = getNumberInString();
+      calculatorStart = true
     
-   let calc = new Calculation(valueArray[0], valueArray[1], valueArray[2])
+    //make populateScreen function call inside calculation class
+   let calc = new Calculation.calculate(populateScreen())
     })
    }
 
-   function getNumberInString(){
-    let value = populateScreen();
-    let valueArray = [];
-    // split string at symbol
-    let symbols = ["+","-","/","*", "**"]
-      valueArray = value.split(value.includes(symbols));
-    
-      console.log(valueArray);
-    return valueArray
-   }
+   
