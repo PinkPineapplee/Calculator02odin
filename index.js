@@ -55,7 +55,7 @@ class Calculation {
     calculatorStart = true;
     screen.textContent = "";
     screen.style.color= "white"
-    screen.style.fontSize = "30px";
+    
 
 
 
@@ -90,6 +90,10 @@ class Calculation {
 
 
 
-   
+   function clearScreen(){
+      if(screen.textContent!== ""){
+         screen.textContent="";
+      }
+   }
 
    
