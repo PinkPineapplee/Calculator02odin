@@ -1,19 +1,39 @@
  body {
-    display: flex;
-    justify-content: center;
-     
+    
  }
 
+ header, footer{
+  font-family: 'Times New Roman', Times, serif;
+  color: orangered;
+  font-size: 20px;
+  height: 10vh;
+  text-align: center;
+ }
+  header{
+   font-family: Apple Chancery ;
+   font-size: 40px;
+}
+ 
  .Calculator{
-    width: 20vw;
-    height: 60vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 80vh;
+   
+ }
+
+ .container{
+    width: 290px;
+    height: 480px;
     background-color: #00847B;
     border: 1ch #00BCB0 solid;
     border-radius: 3px;
+    position:relative; 
+    bottom: 50px;
  }
 
  #monitor{
-   width: 18vw;
+   width: 260px;
    height: 13vh;
    background-color:rgb(12, 12, 58);
    margin: 1em;
@@ -28,7 +48,6 @@
     border: 0.5ch #5f2c2a solid;
     font-size: 15px;
     border-radius: 3px;
-
  }
 
  .digits{
@@ -42,11 +61,16 @@
  #plus , #subtract, #multiply, #divide {
    background-color: pink;
  }
+#plus:hover , #subtract:hover, #multiply:hover, #divide:hover {
+ background-color:rgb(252, 221, 225) ;
+}
 
  #equals{
    background-color: #b73e3e;
  }
-
+#equals:hover{
+background-color: #9f5d5d;
+}
  #ac{
    background-color: rgb(255, 204, 110);
  }
