@@ -53,7 +53,8 @@ class Calculation {
    calculatorStart = true
     let display = "";
     screen.textContent = "";
-     
+     screen.style.color= "white"
+     screen.style.fontSize = "40px";
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn)=> {
 

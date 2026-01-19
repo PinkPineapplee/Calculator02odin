@@ -49,7 +49,9 @@
     font-size: 15px;
     border-radius: 3px;
  }
-
+button:hover{
+   background-color: #a7dad7;
+}
  .digits{
    display: flex;
    flex-wrap: wrap;
