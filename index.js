@@ -49,7 +49,7 @@ class Calculation {
    ac.addEventListener("click", ()=>{
    console.log("The calclator is starting...")
     let display = "";
-
+    let result = 0;
     // initiate values
     ac.textContent= "C";
     calculatorStart = true;
@@ -65,12 +65,14 @@ class Calculation {
       btn.addEventListener("click", (e)=> {   
       display += e.target.value;
       screen.textContent = display;
-      return display;
+      
+      //make display values as arguments inside calculation class
+      result = new Calculation.calculate(display);
+
       });
       });
 
-       //make display values as arguments inside calculation class
-    let result = new Calculation.calculate(display);
+      
     
     // display result of calculation when you click equals sign.
      equals.addEventListener("click", ()=>{
