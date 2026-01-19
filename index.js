@@ -50,38 +50,46 @@ class Calculation {
    
 
    function populateScreen(){
-   calculatorStart = true
+   ac.addEventListener("click", ()=>{
     let display = "";
+
+    // initiate values
+    ac.textContent= "C";
+    calculatorStart = true
     screen.textContent = "";
-     screen.style.color= "white"
-     screen.style.fontSize = "40px";
+    screen.style.color= "white"
+    screen.style.fontSize = "40px";
+
+
+
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn)=> {
 
-    btn.addEventListener("click", (e)=> {   
-     display += e.target.value;
-     screen.textContent = display;
-     return display;
-    });
-    });
+      btn.addEventListener("click", (e)=> {   
+      display += e.target.value;
+      screen.textContent = display;
+      return display;
+      });
+      });
+
+       //make display values as arguments inside calculation class
+    let result = new Calculation.calculate(display);
+    
     // display result of calculation when you click equals sign.
      equals.addEventListener("click", ()=>{
-     screen.textconent = getCalculation();
+     screen.textconent = result;
     })
-    console.log(display);
-   return display;
-   }
+      console.log(display);
 
 
-
-   function getCalculation(){
-    ac.addEventListener("click", ()=>{
-
-   //make populateScreen function call inside calculation class
-   let result = new Calculation.calculate(populateScreen());
+   
+    })
     
-    })
-    return result;
+   return result
    }
+
+
+
+   
 
    
