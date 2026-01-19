@@ -1,12 +1,52 @@
  body {
     display: flex;
     justify-content: center;
-    align-items: center;
+     
  }
 
- .calculator{
-    width: 30vw;
+ .Calculator{
+    width: 20vw;
     height: 60vh;
-    background-color: aqua;
-    border: 1ch rgb(83, 83, 226) solid;
+    background-color: #00847B;
+    border: 1ch #00BCB0 solid;
+    border-radius: 3px;
+ }
+
+ #monitor{
+   width: 18vw;
+   height: 13vh;
+   background-color:rgb(12, 12, 58);
+   margin: 1em;
+   border-radius: 3px;
+ }
+
+ button{
+   height: 3em;
+   width: 3.5em;
+   margin: 1ch;
+   background-color: #BFFFFB;
+    border: 0.5ch #5f2c2a solid;
+    font-size: 15px;
+    border-radius: 3px;
+
+ }
+
+ .digits{
+   display: flex;
+   flex-wrap: wrap;
+   background-color: #55938a;
+   justify-content: space-around;
+   margin-top: 2rem;
+ }
+
+ #plus , #subtract, #multiply, #divide {
+   background-color: pink;
+ }
+
+ #equals{
+   background-color: #b73e3e;
+ }
+
+ #ac{
+   background-color: rgb(255, 204, 110);
  }
