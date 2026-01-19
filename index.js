@@ -14,9 +14,8 @@ let calculatorStart = false;
 
 class Calculation {
 
-    constructor(firstNum,  secondNum ,operator,){
-        this.firstNum = a;
-        this.secondNum = b;
+    constructor(){
+       
         this.operator = {
         "-": (a, b) => a - b,
         "+": (a, b) => a + b,
