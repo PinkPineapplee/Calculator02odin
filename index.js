@@ -50,8 +50,9 @@ class Calculation {
    
 
    function populateScreen(){
+   calculatorStart = true
     let display = "";
-    screen.textContent = " ";
+    screen.textContent = "";
      
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn)=> {
@@ -59,7 +60,7 @@ class Calculation {
     btn.addEventListener("click", (e)=> {   
      display += e.target.value;
      screen.textContent = display;
-     
+     return display;
     });
     });
     // display result of calculation when you click equals sign.
@@ -74,9 +75,8 @@ class Calculation {
 
    function getCalculation(){
     ac.addEventListener("click", ()=>{
-      calculatorStart = true
-    
-    //make populateScreen function call inside calculation class
+
+   //make populateScreen function call inside calculation class
    let result = new Calculation.calculate(populateScreen());
     
     })
