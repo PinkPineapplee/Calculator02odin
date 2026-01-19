@@ -56,12 +56,10 @@ class Calculation {
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn)=> {
 
-    btn.addEventListener("click", (e)=> { 
-
-      if(btn !== "%" || btn !== "+/-"){
+    btn.addEventListener("click", (e)=> {   
      display += e.target.value;
      screen.textContent = display;
-     }
+     
     });
     });
     // display result of calculation when you click equals sign.
