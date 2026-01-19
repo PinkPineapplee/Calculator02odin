@@ -3,7 +3,7 @@ const equals = document.querySelector("#equals");
 const ac = document.querySelector("#ac");
 const screen = document.querySelector("#monitor")
 
-console.log(ac)
+
 let calculatorStart = false;
 //create calculator object
 
@@ -45,7 +45,7 @@ class Calculation {
    
 
    function populateScreen(){
- console.log(ac)
+ 
    ac.addEventListener("click", ()=>{
    console.log("The calclator is starting...")
     let display = "";
@@ -55,7 +55,7 @@ class Calculation {
     calculatorStart = true;
     screen.textContent = "";
     screen.style.color= "white"
-    screen.style.fontSize = "40px";
+    screen.style.fontSize = "30px";
 
 
 
@@ -74,8 +74,10 @@ class Calculation {
     
     // display result of calculation when you click equals sign.
      equals.addEventListener("click", ()=>{
+      screen.textContent = "";
       console.log("equals was clicked!")
-     screen.textconent = result;
+      screen.textconent = result;
+      console.log(result)
     })
       console.log(display);
 
