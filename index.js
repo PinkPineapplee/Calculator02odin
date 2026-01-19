@@ -51,9 +51,11 @@ class Calculation {
 
    function populateScreen(){
     let display = "";
-    screen.textContent = display;
+    screen.textContent = " ";
     buttons.addEventListener("click", (e)=> { 
      display += e.target.value;
+     screen.textContent = display;
+     screen.textconent = getCalculation();
     })
     console.log(display);
    return display;
@@ -66,8 +68,10 @@ class Calculation {
       calculatorStart = true
     
     //make populateScreen function call inside calculation class
-   let calc = new Calculation.calculate(populateScreen())
+   let result = new Calculation.calculate(populateScreen());
+    
     })
+    return result;
    }
 
    
