@@ -1,13 +1,8 @@
 const buttons = document.querySelectorAll(".buttons");
-const minus = document.querySelector("#subtract");
-const add = document.querySelector("#plus");
-const multiply = document.querySelector("#multiply");
-const divide = document.querySelector("#divide");
 const equals = document.querySelector("#equals");
 const ac = document.querySelector("#ac");
-const percent = document.querySelector("#percent");
 const screen = document.querySelector("#monitor")
-const sign = document.querySelector("#sign")
+
 
 let calculatorStart = false;
 //create calculator object
@@ -50,7 +45,9 @@ class Calculation {
    
 
    function populateScreen(){
+
    ac.addEventListener("click", ()=>{
+   console.log("The calclator is starting...")
     let display = "";
 
     // initiate values
@@ -77,6 +74,7 @@ class Calculation {
     
     // display result of calculation when you click equals sign.
      equals.addEventListener("click", ()=>{
+      console.log("equals was clicked!")
      screen.textconent = result;
     })
       console.log(display);
@@ -86,7 +84,7 @@ class Calculation {
     })
     
    return result
-   }
+   }populateScreen()
 
 
 
