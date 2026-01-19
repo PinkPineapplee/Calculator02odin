@@ -15,8 +15,8 @@ let calculatorStart = false;
 class Calculation {
 
     constructor(firstNum,  secondNum ,operator,){
-        this.firstNum = firstNum;
-        this.secondNum = secondNum;
+        this.firstNum = a;
+        this.secondNum = b;
         this.operator = {
         "-": (a, b) => a - b,
         "+": (a, b) => a + b,
@@ -27,7 +27,26 @@ class Calculation {
         "%": a => a/100
      }
      
-    };}
+       this.calculate = function(str){
+
+         let split = str.split(" "),
+            a = +split[0],
+            op = split[1],
+            b = +split[2];
+
+         if (!this.operator[op] || isNaN(a) || isNaN(b)) {
+            return NaN;
+         }  
+         
+         return this.operator[op](a,b);
+
+       };
+
+       this.addNewOperator = function(name, func){
+         this.operator[name] = func;
+       };
+    };
+   }
 
    
 
@@ -37,7 +56,7 @@ class Calculation {
     let display = "";
     screen.textContent = display;
     buttons.addEventListener("click", (e)=> { 
-     display += e.target.value
+     display += e.target.value;
      
     })
     console.log(display);
@@ -59,7 +78,7 @@ class Calculation {
     let value = populateScreen();
     let valueArray = [];
     // split string at symbol
-    let symbols = ["+","-","/","*"]
+    let symbols = ["+","-","/","*", "**"]
       valueArray = value.split(value.includes(symbols));
     
       console.log(valueArray);
