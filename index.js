@@ -22,9 +22,9 @@ class Calculation {
      }
      
        this.calculate = function(str){
-
-         let split = str.split(" "),
-            a = +split[0],
+          symbols = ["+","-","/","*","**"];
+         let split = str.split(str.includes(symbols));
+            a = +split[0], 
             op = split[1],
             b = +split[2];
 
