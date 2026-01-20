@@ -72,11 +72,11 @@ class Calculation {
       //make display values as arguments inside calculation class
        let calc = new Calculation();
         result = calc.calculate(display);
-
+        
         // display result of calculation when you click equals sign.
      equals.addEventListener("click", () => {
        screen.textContent = "";
-       console.log("equals was clicked!")
+       console.log("equals was clicked!");
        screen.textContent = result;
        console.log(result)
        
@@ -93,6 +93,7 @@ class Calculation {
   }
     
       console.log(display);
+      return result;
     })
    }populateScreen()
 
