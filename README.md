@@ -2,13 +2,12 @@
 A simple Calculator.
 
 
-I incorporated a nice calculation class to perform calculations.
+I incorporated a nice calculation class to perform simple calculations.
 
 ```class Calculation {
 
-    constructor(firstNum,  secondNum ,operator,){
-        this.firstNum = firstNum;
-        this.secondNum = secondNum;
+    constructor(){
+       
         this.operator = {
         "-": (a, b) => a - b,
         "+": (a, b) => a + b,
@@ -18,6 +17,5 @@ I incorporated a nice calculation class to perform calculations.
         "+/-": a => a === a ? -a : a,
         "%": a => a/100
      }
-    
     };}
  ```

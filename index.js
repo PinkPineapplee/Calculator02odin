@@ -22,11 +22,7 @@ class Calculation {
      }
      
        this.calculate = function(str){
-        //  let symbols = ["+","-","/","*","**"];
-
-        //  for (let i = 0 ;i < symbols.length; i++){
-        
-        //   }
+       
           let split = str.split(" ");
             
          let   a = +split[0], 
@@ -58,23 +54,18 @@ class Calculation {
 
     // initiate values
    if (ac.textContent==="AC"){ 
-    ac.textContent="C";
-    calculatorStart = true;
-    screen.textContent = "";
-    screen.style.color= "white"
-  }else{
-    calculatorStart = false;
-  }
+
+        ac.textContent="C";
+        calculatorStart = true;
+        screen.textContent = "";
+        screen.style.color= "white"
+  
     
-    
-
-
-
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn)=> {
 
       btn.addEventListener("click", (e)=> {  
-      clearScreen(); 
+      
       display += e.target.value;
       screen.textContent = display;
       
@@ -92,9 +83,12 @@ class Calculation {
     })
       });
       });
-
+     reset(result,display);
       
-    
+    }else{
+    calculatorStart = false;
+    ac.textContent="AC";
+  }
     
       console.log(display);
 
@@ -107,18 +101,12 @@ class Calculation {
 
 
 
-   function clearScreen(){
-      if(screen.textContent!== ""){
-         screen.textContent="";
-      }
-   }
-
-   function reset(){
-    if (result !== 0){
+   function reset(result,display){
+    if (result !== 0 && display !== "" ){
     ac.textContent = "AC"
     result = 0;
     display = "";
     screen.textContent = "";
     }
-    
+    return result , display;
    }
