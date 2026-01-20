@@ -10,7 +10,6 @@ let calculatorStart = false;
 class Calculation {
 
     constructor(){
-       
         this.operator = {
         "-": (a, b) => a - b,
         "+": (a, b) => a + b,
@@ -25,7 +24,7 @@ class Calculation {
        
           let split = str.split(" ");
             
-         let   a = +split[0], 
+            a = +split[0], 
             op = split[1],
             b = +split[2];
 
@@ -91,12 +90,7 @@ class Calculation {
   }
     
       console.log(display);
-
-
-   
     })
-    
-   
    }populateScreen()
 
 
