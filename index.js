@@ -22,11 +22,16 @@ class Calculation {
      }
      
        this.calculate = function(str){
-          symbols = ["+","-","/","*","**"];
-         let split = str.split(str.includes(symbols));
+         let symbols = ["+","-","/","*","**"];
+
+         for (i = 0 ;i < symbols.length; i++){
+         let split = str.split(str.includes(symbols[i]));
+            
             a = +split[0], 
             op = split[1],
             b = +split[2];
+          }
+         
 
          if (!this.operator[op] || isNaN(a) || isNaN(b)) {
             return NaN;
@@ -50,6 +55,7 @@ class Calculation {
    console.log("The calclator is starting...")
     let display = "";
     let result = 0;
+
     // initiate values
     ac.textContent= "C";
     calculatorStart = true;
@@ -69,18 +75,20 @@ class Calculation {
       //make display values as arguments inside calculation class
       let calc = new Calculation();
         result = calc.calculate(display);
+
+        // display result of calculation when you click equals sign.
+     equals.addEventListener("click", ()=>{
+       screen.textContent = "";
+       console.log("equals was clicked!")
+       screen.textconent = result;
+       console.log(result)
+    })
       });
       });
 
       
     
-    // display result of calculation when you click equals sign.
-     equals.addEventListener("click", ()=>{
-      screen.textContent = "";
-      console.log("equals was clicked!")
-      screen.textconent = result;
-      console.log(result)
-    })
+    
       console.log(display);
 
 
