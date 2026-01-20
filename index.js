@@ -5,8 +5,8 @@ const screen = document.querySelector("#monitor")
 
 
 let calculatorStart = false;
-//create calculator object
 
+//create calculator object
 class Calculation {
 
     constructor(){
@@ -24,11 +24,11 @@ class Calculation {
        
           let split = str.split(" ");
             
-            a = +split[0], 
+          let  a = +split[0], 
             op = split[1],
             b = +split[2];
 
-         if (!this.operator[op] || isNaN(a) || isNaN(b)) {
+         if (!this.operator[op] || isNaN(a) || isNaN(b)){
             return NaN;
          }  
          
@@ -46,34 +46,35 @@ class Calculation {
 
    function populateScreen(){
  
-   ac.addEventListener("click", ()=>{
+   ac.addEventListener("click", () => {
+
    console.log("The calclator is starting...")
     let display = "";
     let result = 0;
 
     // initiate values
-   if (ac.textContent==="AC"){ 
+   if (ac.textContent === "AC"){ 
 
-        ac.textContent="C";
+        ac.textContent = "C";
         calculatorStart = true;
         screen.textContent = "";
         screen.style.color= "white"
   
     
     //add eventlistener to buttons and display their results in screen
-    buttons.forEach((btn)=> {
+    buttons.forEach((btn) => {
 
-      btn.addEventListener("click", (e)=> {  
+      btn.addEventListener("click", (e) => {  
       
       display += e.target.value;
       screen.textContent = display;
       
       //make display values as arguments inside calculation class
-      let calc = new Calculation();
+       let calc = new Calculation();
         result = calc.calculate(display);
 
         // display result of calculation when you click equals sign.
-     equals.addEventListener("click", ()=>{
+     equals.addEventListener("click", () => {
        screen.textContent = "";
        console.log("equals was clicked!")
        screen.textContent = result;
@@ -82,11 +83,13 @@ class Calculation {
     })
       });
       });
-     reset(result,display);
+     //reset(result,display);
       
     }else{
+
     calculatorStart = false;
-    ac.textContent="AC";
+    ac.textContent = "AC";
+
   }
     
       console.log(display);
@@ -97,7 +100,7 @@ class Calculation {
 
    function reset(result,display){
     if (result !== 0 && display !== "" ){
-    ac.textContent = "AC"
+    
     result = 0;
     display = "";
     screen.textContent = "";
