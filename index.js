@@ -22,16 +22,16 @@ class Calculation {
      }
      
        this.calculate = function(str){
-         let symbols = ["+","-","/","*","**"];
+        //  let symbols = ["+","-","/","*","**"];
 
-         for (i = 0 ;i < symbols.length; i++){
-         let split = str.split(str.includes(symbols[i]));
+        //  for (let i = 0 ;i < symbols.length; i++){
+        
+        //   }
+          let split = str.split(" ");
             
-            a = +split[0], 
+         let   a = +split[0], 
             op = split[1],
             b = +split[2];
-          }
-         
 
          if (!this.operator[op] || isNaN(a) || isNaN(b)) {
             return NaN;
@@ -57,10 +57,15 @@ class Calculation {
     let result = 0;
 
     // initiate values
-    ac.textContent= "C";
+   if (ac.textContent==="AC"){ 
+    ac.textContent="C";
     calculatorStart = true;
     screen.textContent = "";
     screen.style.color= "white"
+  }else{
+    calculatorStart = false;
+  }
+    
     
 
 
@@ -68,7 +73,8 @@ class Calculation {
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn)=> {
 
-      btn.addEventListener("click", (e)=> {   
+      btn.addEventListener("click", (e)=> {  
+      clearScreen(); 
       display += e.target.value;
       screen.textContent = display;
       
@@ -80,8 +86,9 @@ class Calculation {
      equals.addEventListener("click", ()=>{
        screen.textContent = "";
        console.log("equals was clicked!")
-       screen.textconent = result;
+       screen.textContent = result;
        console.log(result)
+       
     })
       });
       });
@@ -106,4 +113,12 @@ class Calculation {
       }
    }
 
-   
+   function reset(){
+    if (result !== 0){
+    ac.textContent = "AC"
+    result = 0;
+    display = "";
+    screen.textContent = "";
+    }
+    
+   }
