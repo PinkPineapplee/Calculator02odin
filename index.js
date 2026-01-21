@@ -11,12 +11,12 @@ class Calculation {
 
     constructor(){
         this.operator = {
-        "-": (a, b) => a - b,
-        "+": (a, b) => a + b,
-        "/": (a, b) => a / b,
-        "*": (a, b) => a * b,
-        "**": (a, b) => a ** b,
-        "+/-": a => a === a ? -a : a,
+        "-": (a, b) =>  a - b,
+        "+": (a, b) =>  a + b,
+        "/": (a, b) =>  a / b,
+        "*": (a, b) =>  a * b,
+        "**": (a, b) =>  a ** b,
+        "+/-": a => a === a ?  -a :  a,
         "%": a => a/100
      }
      
@@ -83,7 +83,7 @@ class Calculation {
     })
       });
       });
-     //reset(result,display);
+     
       
     }else{
 
@@ -107,4 +107,13 @@ class Calculation {
     screen.textContent = "";
     }
     return result , display;
+   }
+
+
+   function performNewCalculation(a,b,results){
+    reset(result,display);
+     let newCalc = new Calculation();
+       // this function watches for user decisions through eventslisteners, if user want to use result to calculate or is user want to do a new calculation.
+
+       if (results !== 0  ){}
    }
