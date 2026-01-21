@@ -110,7 +110,7 @@ class Calculation {
 
 
    function performNewCalculation(results){
-    let newCalc;
+    let newCalc = new Calculation();
      
        // this event watches for user decisions through event listeners,
        //  if user want to use result to calculate new or if user want to do a new calculation.
@@ -119,15 +119,22 @@ class Calculation {
        if (results !== 0){
         display += `${results} ` + e.target.value;
         screen.textContent= display;
-        newCalc = new Calculation();
          results = newCalc.calculate(display);
        }
        else if (results === 0){
         
         display += e.target.value;
         screen.textContent= display;
-        newCalc = new Calculation();
         results = newCalc.calculate(display)
        }
        })
+
+       numberBtns.addEventListener("click"), (e)=>{
+        if (results !== 0){
+        reset();
+        display = e.target.value;
+        screen.textContent= display;
+        results = newCalc.calculate(display);
+        }
+       }
    }
