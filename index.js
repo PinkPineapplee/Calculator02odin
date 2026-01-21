@@ -2,7 +2,8 @@ const buttons = document.querySelectorAll(".buttons");
 const equals = document.querySelector("#equals");
 const ac = document.querySelector("#ac");
 const screen = document.querySelector("#monitor")
-
+const operatorBtns = document.querySelectorAll(".operators");
+const numberBtns = document.querySelectorAll(".numbers")
 
 let calculatorStart = false;
 
