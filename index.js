@@ -111,6 +111,8 @@ class Calculation {
 
 
    function performNewCalculation(results){
+    buttons.forEach((btn)=>{ 
+        btn.removeEventListener("click"), console.log("buttons are not working nows")})
     let newCalc = new Calculation();
      
        // this event watches for user decisions through event listeners,
@@ -132,7 +134,7 @@ class Calculation {
        })
     })
 
-       buttons.forEach((btn)=>{ 
+       numberBtns.forEach((btn)=>{ 
         btn.addEventListener("click"), (e)=>{
 
             if (results !== 0){
