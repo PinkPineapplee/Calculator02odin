@@ -119,21 +119,22 @@ class Calculation {
        operatorBtns.forEach((btn)=>{
         btn.addEventListener("click",(e)=>{
           if (results !== 0){
-            display += `${results}` + e.target.value;
-            screen.textContent= display;
+            display += results + e.target.value;
+            screen.textContent = display;
             results = newCalc.calculate(display);
           }
           else if (results === 0){
             
             display += e.target.value;
             screen.textContent= display;
-            results = newCalc.calculate(display)
+            results = newCalc.calculate(display);
           }
        })
     })
 
-       numberBtns.forEach((btn)=>{ 
+       buttons.forEach((btn)=>{ 
         btn.addEventListener("click"), (e)=>{
+
             if (results !== 0){
             reset();
             display += e.target.value;
