@@ -6,7 +6,8 @@ const operatorBtns = document.querySelectorAll(".operators");
 const numberBtns = document.querySelectorAll(".numbers")
 
 let calculatorStart = false;
-
+ let display = "";
+  let result = 0;
 //create calculator object
 class Calculation {
 
@@ -50,8 +51,7 @@ class Calculation {
    ac.addEventListener("click", () => {
 
    console.log("The calclator is starting...")
-    let display = "";
-    let result = 0;
+   
 
     // initiate values
    if (ac.textContent === "AC"){ 
@@ -80,7 +80,7 @@ class Calculation {
        console.log("equals was clicked!");
        screen.textContent = result;
        console.log(result)
-       
+       performNewCalculation(result);
     })
       });
       });
@@ -90,7 +90,7 @@ class Calculation {
 
     calculatorStart = false;
     ac.textContent = "AC";
-
+    reset();
   }
     
       console.log(display);
@@ -100,21 +100,34 @@ class Calculation {
 
 
 
-   function reset(result,display){
-    if (result !== 0 && display !== "" ){
-    
+   function reset(){ 
     result = 0;
     display = "";
     screen.textContent = "";
-    }
+    
     return result , display;
    }
 
 
-   function performNewCalculation(a,b,results){
-    reset(result,display);
-     let newCalc = new Calculation();
-       // this function watches for user decisions through eventslisteners, if user want to use result to calculate or is user want to do a new calculation.
-
-       if (results !== 0  ){}
+   function performNewCalculation(results){
+    let newCalc;
+     
+       // this event watches for user decisions through event listeners,
+       //  if user want to use result to calculate new or if user want to do a new calculation.
+      
+       operatorBtns.addEventListener("click",(e)=>{
+       if (results !== 0){
+        display += `${results} ` + e.target.value;
+        screen.textContent= display;
+        newCalc = new Calculation();
+         results = newCalc.calculate(display);
+       }
+       else if (results === 0){
+        
+        display += e.target.value;
+        screen.textContent= display;
+        newCalc = new Calculation();
+        results = newCalc.calculate(display)
+       }
+       })
    }
