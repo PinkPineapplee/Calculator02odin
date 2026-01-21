@@ -48,9 +48,9 @@ class Calculation {
 
    function populateScreen(){
  
-   ac.addEventListener("click", () => {
+    ac.addEventListener("click", () => {
 
-   console.log("The calclator is starting...")
+     console.log("The calclator is starting...")
    
 
     // initiate values
@@ -79,6 +79,7 @@ class Calculation {
        screen.textContent = "";
        console.log("equals was clicked!");
        screen.textContent = result;
+       display = "";
        console.log(result)
        performNewCalculation(result);
     })
@@ -118,7 +119,7 @@ class Calculation {
        operatorBtns.forEach((btn)=>{
         btn.addEventListener("click",(e)=>{
           if (results !== 0){
-            display += `${results} ` + e.target.value;
+            display += `${results}` + e.target.value;
             screen.textContent= display;
             results = newCalc.calculate(display);
           }
@@ -130,11 +131,12 @@ class Calculation {
           }
        })
     })
+
        numberBtns.forEach((btn)=>{ 
         btn.addEventListener("click"), (e)=>{
             if (results !== 0){
             reset();
-            display = e.target.value;
+            display += e.target.value;
             screen.textContent= display;
             results = newCalc.calculate(display);
             }
