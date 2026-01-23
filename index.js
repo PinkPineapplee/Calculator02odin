@@ -62,29 +62,7 @@ class Calculation {
         screen.style.color= "white"
   
     
-    //add eventlistener to buttons and display their results in screen
-    buttons.forEach((btn) => {
-
-      btn.addEventListener("click", (e) => {  
-      
-      display += e.target.value;
-      screen.textContent = display;
-      
-      //make display values as arguments inside calculation class
-       let calc = new Calculation();
-        result = calc.calculate(display);
-        
-        // display result of calculation when you click equals sign.
-     equals.addEventListener("click", () => {
-       screen.textContent = "";
-       console.log("equals was clicked!");
-       screen.textContent = result;
-       display = "";
-       console.log(result)
-       performNewCalculation(result);
-    })
-      });
-      });
+    
      
       
     }else{
@@ -111,38 +89,32 @@ class Calculation {
 
 
    function performNewCalculation(results){
-    buttons.forEach((btn)=>{ 
-        btn.removeEventListener("click"), console.log("buttons are not working nows")})
-    let newCalc = new Calculation();
-     
-       // this event watches for user decisions through event listeners,
-       //  if user want to use result to calculate new or if user want to do a new calculation.
+   
+    //add eventlistener to buttons and display their results in screen
+    buttons.forEach((btn) => {
+
+      btn.addEventListener("click", (e) => {  
       
-       operatorBtns.forEach((btn)=>{
-        btn.addEventListener("click",(e)=>{
-          if (results !== 0){
+       if (results !== 0){
             display += results + e.target.value;
-            screen.textContent = display;
+            
             results = newCalc.calculate(display);
           }
           else if (results === 0){
             
             display += e.target.value;
-            screen.textContent= display;
+           
             results = newCalc.calculate(display);
           }
-       })
+        
+        // display result of calculation when you click equals sign.
+     equals.addEventListener("click", () => {
+       display = "";
+       console.log(result)
+       
     })
-
-       numberBtns.forEach((btn)=>{ 
-        btn.addEventListener("click"), (e)=>{
-
-            if (results !== 0){
-            reset();
-            display += e.target.value;
-            screen.textContent= display;
-            results = newCalc.calculate(display);
-            }
-       }
-       });
-   }
+      });
+      });
+     
+       
+   }performNewCalculation(result);
