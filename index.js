@@ -45,6 +45,33 @@ class Calculation {
    }
 
    
+   function performNewCalculation(results){
+   let newCalc;
+   let values = '';
+    //add eventlistener to buttons and display their results in screen
+    buttons.forEach((btn) => {
+
+      btn.addEventListener("click", (e) => {  
+      
+       if (results !== 0){
+            values += results + e.target.value; 
+            results = newCalc.calculate(values);
+          }
+          else {
+            
+            values += e.target.value;
+            results = newCalc.calculate(values);
+          }
+        
+       
+      });
+      });
+     
+     return results;  
+   };
+
+
+
 
    function populateScreen(){
  
@@ -64,6 +91,8 @@ class Calculation {
 
          // display result of calculation when you click equals sign.
      equals.addEventListener("click", () => {
+      performNewCalculation(result)
+      
       screen.textContent = performNewCalculation();
        
        
@@ -88,27 +117,3 @@ class Calculation {
     
    }
 
-
-   function performNewCalculation(results){
-   let newCalc;
-    //add eventlistener to buttons and display their results in screen
-    buttons.forEach((btn) => {
-
-      btn.addEventListener("click", (e) => {  
-      
-       if (results !== 0){
-            display += results + e.target.value; 
-            results = newCalc.calculate(display);
-          }
-          else {
-            
-            display += e.target.value;
-            results = newCalc.calculate(display);
-          }
-        
-       
-      });
-      });
-     
-     return display;  
-   }performNewCalculation(result);
