@@ -51,20 +51,23 @@ class Calculation {
     ac.addEventListener("click", () => {
 
      console.log("The calclator is starting...")
+    
    
-
     // initiate values
    if (ac.textContent === "AC"){ 
 
         ac.textContent = "C";
         calculatorStart = true;
         screen.textContent = "";
-        screen.style.color= "white"
-  
-    
-    
-     
-      
+        screen.style.color= "white";
+
+
+         // display result of calculation when you click equals sign.
+     equals.addEventListener("click", () => {
+      screen.textContent = performNewCalculation();
+       
+       
+    })
     }else{
 
     calculatorStart = false;
@@ -72,8 +75,6 @@ class Calculation {
     reset();
   }
     
-      console.log(display);
-      return result;
     })
    }populateScreen()
 
@@ -84,37 +85,30 @@ class Calculation {
     display = "";
     screen.textContent = "";
     
-    return result , display;
+    
    }
 
 
    function performNewCalculation(results){
-   
+   let newCalc;
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn) => {
 
       btn.addEventListener("click", (e) => {  
       
        if (results !== 0){
-            display += results + e.target.value;
-            
+            display += results + e.target.value; 
             results = newCalc.calculate(display);
           }
-          else if (results === 0){
+          else {
             
             display += e.target.value;
-           
             results = newCalc.calculate(display);
           }
         
-        // display result of calculation when you click equals sign.
-     equals.addEventListener("click", () => {
-       display = "";
-       console.log(result)
        
-    })
       });
       });
      
-       
+     return display;  
    }performNewCalculation(result);
