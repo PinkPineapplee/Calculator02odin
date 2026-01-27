@@ -1,12 +1,12 @@
 const buttons = document.querySelectorAll(".buttons");
 const equals = document.querySelector("#equals");
 const ac = document.querySelector("#ac");
-const screen = document.querySelector("#monitor")
-const operatorBtns = document.querySelectorAll(".operators");
-const numberBtns = document.querySelectorAll(".numbers")
+const screen = document.querySelector("#monitor");
 
 let calculatorStart = false;
- 
+ let result = 0;
+ let display = "";
+
 //create calculator object
 class Calculation {
 
@@ -46,30 +46,6 @@ class Calculation {
    
 
 
-   function populateScreen(){
- 
-     numberBtns.forEach((btn) => {
-
-      btn.addEventListener("click", (e) => {  
-        screen.textContent= "";
-        display += e.target.value;
-        screen.textContent = display;
-        console.log("I am a number")
-
-      });
-    })
-
-     operatorBtns.forEach((btn) => {
-
-      btn.addEventListener("click", (e) => {  
-        display += e.target.value;
-        screen.textContent = display;
-        console.log("I am a sign")
-      });
-    })
-    }
-    
-
 
 // Returns to Default settings
    function reset(){ 
@@ -83,12 +59,12 @@ class Calculation {
 
    function performNewCalculation(){
   
-    let result = 0;
+   let newCalc = new Calculation();
 
     ac.addEventListener("click", () => {
 
       console.log("The calculator is starting...")
-      setTimeout(screen.textContent = "The calculator is starting...", 3000)
+     // setTimeout(screen.textContent = "The calculator is starting...", 3000)
 
     // initiate values
    if (ac.textContent === "AC"){ 
@@ -96,45 +72,29 @@ class Calculation {
         ac.textContent = "C";
         calculatorStart = true;
         screen.style.color= "white";
-         populateScreen()
+        
 
-   let newCalc = new Calculation();
-   let values = '';
+   
    
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn) => {
 
       btn.addEventListener("click", (e) => {  
-      
-       if (result !== 0){
-            values = result;
-            values += e.target.value; 
-            console.log(values, "this is after equals is clicked.");
-            result = newCalc.calculate(values)
+          
+            display += e.target.value; 
+            screen.textContent = display;
+            console.log(display);
+            result = newCalc.calculate(display)
 
                 
       // display result of calculation when you click equals sign.
         equals.addEventListener("click", () => {
           screen.textContent="";
           screen.textContent = result;
-       
+          display = result;
     });
-          }
-          else if(result === 0 ) {
-            values += e.target.value;
-            console.log(values, "this is after equals is clicked.");
-            result = newCalc.calculate(values);
-            
-
-
-        // display result of calculation when you click equals sign.
-        equals.addEventListener("click", () => {
-          screen.textContent="";
-          screen.textContent = result;
+   
        
-    });
-          }
-            
       });
       });
      
