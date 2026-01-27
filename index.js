@@ -57,7 +57,7 @@ class Calculation {
    }
 
 
-   function performNewCalculation(){
+   function performNewCalculation(num){
   
    let newCalc = new Calculation();
 
@@ -80,18 +80,19 @@ class Calculation {
     buttons.forEach((btn) => {
 
       btn.addEventListener("click", (e) => {  
-          
+            screen.textContent = "";
             display += e.target.value; 
             screen.textContent = display;
             console.log(display);
-            result = newCalc.calculate(display)
-
+            result = newCalc.calculate(display);
+           
                 
       // display result of calculation when you click equals sign.
         equals.addEventListener("click", () => {
           screen.textContent="";
           screen.textContent = result;
-          display = result;
+          performNewCalculation(result)
+        
     });
    
        
@@ -106,3 +107,8 @@ class Calculation {
   }) 
   }
  performNewCalculation()
+
+
+ function continueCalculation(a){
+   // display = 
+ }
