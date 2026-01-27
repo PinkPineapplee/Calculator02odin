@@ -54,6 +54,7 @@ class Calculation {
         screen.textContent= "";
         display += e.target.value;
         screen.textContent = display;
+        console.log("I am a number")
 
       });
     })
@@ -63,7 +64,7 @@ class Calculation {
       btn.addEventListener("click", (e) => {  
         display += e.target.value;
         screen.textContent = display;
-
+        console.log("I am a sign")
       });
     })
     }
@@ -108,7 +109,7 @@ class Calculation {
        if (result !== 0){
             values = result;
             values += e.target.value; 
-            console.log(values);
+            console.log(values, "this is after equals is clicked.");
             result = newCalc.calculate(values)
 
                 
@@ -121,7 +122,7 @@ class Calculation {
           }
           else if(result === 0 ) {
             values += e.target.value;
-            console.log(values);
+            console.log(values, "this is after equals is clicked.");
             result = newCalc.calculate(values);
             
 
