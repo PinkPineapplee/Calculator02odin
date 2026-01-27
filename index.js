@@ -69,9 +69,7 @@ class Calculation {
         calculatorStart = true;
         screen.style.color= "white";
         
-
-   
-   
+  
     //add eventlistener to buttons and display their results in screen
     buttons.forEach((btn) => {
 
@@ -105,9 +103,10 @@ class Calculation {
  performNewCalculation()
 
 
- function continueCalculation(a){
-    if(screen.textcontent === a){
-      display = string(a);
+//  function continueCalculation(a){
+//   let calc02 = new Calculation();
+//     if(screen.textcontent === a){
+//       display = string(a);
      
-    }
- }
+//     }
+//  }
