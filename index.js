@@ -43,10 +43,6 @@ class Calculation {
     };
    }
 
-   
-
-
-
 // Returns to Default settings
    function reset(){ 
     result = 0;
@@ -91,10 +87,10 @@ class Calculation {
         equals.addEventListener("click", () => {
           screen.textContent="";
           screen.textContent = result;
-          performNewCalculation(result)
+         
         
     });
-   
+     
        
       });
       });
@@ -110,5 +106,8 @@ class Calculation {
 
 
  function continueCalculation(a){
-   // display = 
+    if(screen.textcontent === a){
+      display = string(a);
+     
+    }
  }
