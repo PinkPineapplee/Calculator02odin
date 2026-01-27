@@ -81,7 +81,7 @@ class Calculation {
 
 
    function performNewCalculation(){
-    let display = "";
+  
     let result = 0;
 
     ac.addEventListener("click", () => {
@@ -115,8 +115,7 @@ class Calculation {
       // display result of calculation when you click equals sign.
         equals.addEventListener("click", () => {
           screen.textContent="";
-          display = result;
-          screen.textContent = display;
+          screen.textContent = result;
        
     });
           }
@@ -124,14 +123,13 @@ class Calculation {
             values += e.target.value;
             console.log(values);
             result = newCalc.calculate(values);
-             populateScreen(result,values)
+            
 
 
         // display result of calculation when you click equals sign.
         equals.addEventListener("click", () => {
           screen.textContent="";
-          display = result;
-          screen.textContent = display;
+          screen.textContent = result;
        
     });
           }
