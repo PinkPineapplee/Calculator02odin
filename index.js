@@ -4,9 +4,15 @@ const ac = document.querySelector("#ac");
 const screen = document.querySelector("#monitor");
 
 let calculatorStart = false;
- let result = 0;
- let display = "";
+ 
 
+ // start calculator
+   ac.addEventListener("click", ()=>{
+   
+    calculatorStart= true;
+    ac.textContent = "C";
+    screen.textContent = populateScreen()
+   })
 //create calculator object
 class Calculation {
 
@@ -44,12 +50,14 @@ class Calculation {
    }
 
 // Returns to Default settings
-   function reset(){ 
+   function clear(){ 
+    if (ac.textContent==="C"){
     result = 0;
     display = "";
     screen.textContent = "";
     calculatorStart = false;
     ac.textContent = "AC";
+    }
    }
 
 
@@ -114,27 +122,26 @@ class Calculation {
 
 
 function populateScreen(){
-
-  // start calculator
-   ac.addEventListener("click", ()=>{
-    calculatorStart= true;
-    ac.textContent = "C";
-    makeNewCalculation()
-   })
-  }populateScreen()
+   let result = 0;
+    let display = "";
+    let calc = new Calculation();
+  // if 
+  }
 
   // When calculator starts add eventlistener to the buttons
   function makeNewCalculation(){
-   let calc = new Calculation();
+   
 
       if (calculatorStart === true){
      buttons.forEach((btns)=>{
+
       btns.addEventListener("click",(e)=>{
+        display += e.target.value;
+        console.log(display)
         let monitor = screen.textContent;
-        monitor.reduce((result)=>{
-          display += e.target.value;
-         screen.textContent = display;
-         result = calc.calculate(screen.textContent);
+        monitor.reduce((display)=>{
+         result = calc.calculate(display);
+         console.log(result);
          screen.textContent = result;
          display = ""
          return result
@@ -147,4 +154,5 @@ function populateScreen(){
 
   }
   // every time a calculator make a new calculation: add the result or start a fresh while calculator is on.
+  return display,result
 }
