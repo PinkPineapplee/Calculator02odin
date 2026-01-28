@@ -113,14 +113,15 @@ class Calculation {
 
 
 
-function operate(){
+function populateScreen(){
+
   // start calculator
    ac.addEventListener("click", ()=>{
     calculatorStart= true;
     ac.textContent = "C";
     makeNewCalculation()
    })
-
+  }populateScreen()
 
   // When calculator starts add eventlistener to the buttons
   function makeNewCalculation(){
@@ -129,11 +130,16 @@ function operate(){
       if (calculatorStart === true){
      buttons.forEach((btns)=>{
       btns.addEventListener("click",(e)=>{
-        display += e.target.value;
-        screen.textContent = display;
-        result = calc.calculate(screen.textContent);
-        screen.textContent = result;
-        display = ""
+        let monitor = screen.textContent;
+        monitor.reduce((result)=>{
+          display += e.target.value;
+         screen.textContent = display;
+         result = calc.calculate(screen.textContent);
+         screen.textContent = result;
+         display = ""
+         return result
+        })
+       
       })
      })
   
@@ -142,4 +148,3 @@ function operate(){
   }
   // every time a calculator make a new calculation: add the result or start a fresh while calculator is on.
 }
-}operate()
