@@ -143,16 +143,4 @@ function populateScreen(){
      }
   
 
-  // When calculator starts add eventlistener to the buttons
-  function makeNewCalculation(){
-   
-
-      if (calculatorStart === true){
-     
   
-
-
-  }
-  // every time a calculator make a new calculation: add the result or start a fresh while calculator is on.
-  return display,result
-}
