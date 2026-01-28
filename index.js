@@ -117,13 +117,15 @@ function operate(){
   // start calculator
    ac.addEventListener("click", ()=>{
     calculatorStart= true;
+    ac.textContent = "C";
     makeNewCalculation()
    })
 
 
   // When calculator starts add eventlistener to the buttons
   function makeNewCalculation(){
-   let calc = new Calculation()
+   let calc = new Calculation();
+
       if (calculatorStart === true){
      buttons.forEach((btns)=>{
       btns.addEventListener("click",(e)=>{
@@ -140,4 +142,4 @@ function operate(){
   }
   // every time a calculator make a new calculation: add the result or start a fresh while calculator is on.
 }
-}
+}operate()
