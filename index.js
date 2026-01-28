@@ -126,29 +126,29 @@ function populateScreen(){
     let display = "";
     let calc = new Calculation();
   // if 
-  }
+
+  buttons.forEach((btns)=>{
+
+      btns.addEventListener("click",(e)=>{
+        display += e.target.value;
+        console.log(display)
+         result = calc.calculate(display);
+         console.log(result);
+         screen.textContent = result;
+         display = ""
+         
+        })
+       
+      })
+     }
+  
 
   // When calculator starts add eventlistener to the buttons
   function makeNewCalculation(){
    
 
       if (calculatorStart === true){
-     buttons.forEach((btns)=>{
-
-      btns.addEventListener("click",(e)=>{
-        display += e.target.value;
-        console.log(display)
-        let monitor = screen.textContent;
-        monitor.reduce((display)=>{
-         result = calc.calculate(display);
-         console.log(result);
-         screen.textContent = result;
-         display = ""
-         return result
-        })
-       
-      })
-     })
+     
   
 
 
