@@ -117,15 +117,25 @@ function operate(){
   // start calculator
    ac.addEventListener("click", ()=>{
     calculatorStart= true;
-    makeNewCalculation(result)
+    makeNewCalculation()
    })
 
 
   // When calculator starts add eventlistener to the buttons
   function makeNewCalculation(){
-  if (calculatorStart === true){
-     
-    
+   let calc = new Calculation()
+      if (calculatorStart === true){
+     buttons.forEach((btns)=>{
+      btns.addEventListener("click",(e)=>{
+        display += e.target.value;
+        screen.textContent = display;
+        result = calc.calculate(screen.textContent);
+        screen.textContent = result;
+        display = ""
+      })
+     })
+  
+
 
   }
   // every time a calculator make a new calculation: add the result or start a fresh while calculator is on.
