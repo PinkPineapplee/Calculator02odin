@@ -29,9 +29,8 @@ class Calculation {
      
        this.calculate = function(str){
        
-          let split = str.split(" ");
-            
-          let  a = +split[0], 
+          let split = str.split(" "),
+             a = +split[0], 
             op = split[1],
             b = +split[2];
 
