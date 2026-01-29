@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll(".buttons");
 const equals = document.querySelector("#equals");
 const ac = document.querySelector("#ac");
 const screen = document.querySelector("#monitor");
+const operator = document.querySelector(".op")
 
 let calculatorStart = false;
  
@@ -125,7 +126,12 @@ function populateScreen(){
     let display = "";
     let calc = new Calculation();
   // if 
+operator.forEach((op)=> {
+   op.addEventListener("click", ()=>{
+     
 
+   })
+})
   buttons.forEach((btns)=>{
 
       btns.addEventListener("click",(e)=>{
