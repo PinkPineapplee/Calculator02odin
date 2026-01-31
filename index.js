@@ -129,23 +129,27 @@ function populateScreen(){
 operator.forEach((op)=> {
    op.addEventListener("click", ()=>{
      
-
-   })
-})
-  buttons.forEach((btns)=>{
+      equals.addEventListener("click", ()=>{ 
+         screen.textContent= display;
+      })
+//i///////////////////////////////////////////////e
+buttons.forEach((btns)=>{
 
       btns.addEventListener("click",(e)=>{
         display += e.target.value;
         console.log(display)
          result = calc.calculate(display);
          console.log(result);
-         screen.textContent = result;
-         display = ""
+         display = result
          
         })
        
       })
-     }
+    
+//i////////////////////////////////////////////////e     
+   })
+})
+   }
   
 
   
