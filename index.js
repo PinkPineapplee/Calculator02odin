@@ -130,9 +130,11 @@ buttons.forEach((btns)=>{
           screen.textContent="";
           screen.textContent = result;
           display= result;
+       
          
-        
-    });
+    });  // write a conditional to clear screen when you want to populate the screen anew
+        if (isNumber(e.target.value) ){// continue from here tomorrow!
+         }
   }
         })
 
@@ -144,4 +146,4 @@ buttons.forEach((btns)=>{
    }
   
 
-  
+ 
