@@ -130,6 +130,24 @@ function populateScreen(){
 buttons.forEach((btns)=>{
 
       btns.addEventListener("click", (e) => {  
+            
+   
+       if (display === result && result !== 0){
+ 
+        display += e.target.value;
+        screen.textContent = display;
+        console.log(display)
+        result = newCalc.calculate(display);
+        
+       
+     
+         equals.addEventListener("click", ()=>{ 
+         screen.textContent = ""
+         screen.textContent = display;
+         display= result;
+      })
+  } else{
+   
             screen.textContent = "";
             display += e.target.value; 
             screen.textContent = display;
@@ -141,24 +159,10 @@ buttons.forEach((btns)=>{
         equals.addEventListener("click", () => {
           screen.textContent="";
           screen.textContent = result;
+          display= result;
          
         
     });
-         
-
-       if (display === result && result !== 0){
- 
-        display += e.target.value;
-        screen.textContent = display;
-        console.log(display)
-        result = calc.calculate(display);
-        console.log(result);
-       
-     
-         equals.addEventListener("click", ()=>{ 
-         screen.textContent = ""
-         screen.textContent = display;
-      })
   }
         })
 
