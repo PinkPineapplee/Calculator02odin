@@ -61,63 +61,33 @@ class Calculation {
    }
 
 
-//    function performNewCalculation(num){
+   function performNewCalculation(num){
   
-//    let newCalc = new Calculation();
+   let newCalc = new Calculation();
 
-//     ac.addEventListener("click", () => {
+    ac.addEventListener("click", () => {
 
-//       console.log("The calculator is starting...")
-//      // setTimeout(screen.textContent = "The calculator is starting...", 3000)
+      console.log("The calculator is starting...")
+     // setTimeout(screen.textContent = "The calculator is starting...", 3000)
 
-//     // initiate values
-//    if (ac.textContent === "AC"){ 
+    // initiate values
+   if (ac.textContent === "AC"){ 
 
-//         ac.textContent = "C";
-//         calculatorStart = true;
-//         screen.style.color= "white";
-        
-  
-//     //add eventlistener to buttons and display their results in screen
-//     buttons.forEach((btn) => {
-
-//       btn.addEventListener("click", (e) => {  
-//             screen.textContent = "";
-//             display += e.target.value; 
-//             screen.textContent = display;
-//             console.log(display);
-//             result = newCalc.calculate(display);
-           
-                
-//       // display result of calculation when you click equals sign.
-//         equals.addEventListener("click", () => {
-//           screen.textContent="";
-//           screen.textContent = result;
-         
-        
-//     });
-     
-       
-//       });
-//       });
-     
+        ac.textContent = "C";
+        calculatorStart = true;
+        screen.style.color= "white";
+        populateScreen(); 
    
-//    }
-//    else{
-//     reset();
-//   }
-//   }) 
-//   }
-//  performNewCalculation()
+   }
+   else{
+    reset();
+  }
+  }) 
+  }
+ performNewCalculation()
 
 
-// //  function continueCalculation(a){
-// //   let calc02 = new Calculation();
-// //     if(screen.textcontent === a){
-// //       display = string(a);
-     
-// //     }
-// //  }
+
 
 
 
@@ -171,7 +141,7 @@ buttons.forEach((btns)=>{
   
 
  
-   }populateScreen()
+   }
   
 
   
