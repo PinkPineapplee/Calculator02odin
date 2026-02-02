@@ -124,24 +124,26 @@ class Calculation {
 function populateScreen(){
    let result = 0;
     let display = "";
-    let calc = new Calculation();
+    let newCalc = new Calculation();
 
     //i///////////////////////////////////////////////e
 buttons.forEach((btns)=>{
 
-      btns.addEventListener("click",(e)=>{
-        display += e.target.value;
-        screen.textContent = display;
-        console.log(display)
-        result = calc.calculate(display);
-        console.log(result);
-        display = result;
+      btns.addEventListener("click", (e) => {  
+            screen.textContent = "";
+            display += e.target.value; 
+            screen.textContent = display;
+            console.log(display);
+            result = newCalc.calculate(display);
+           
+                
+      // display result of calculation when you click equals sign.
+        equals.addEventListener("click", () => {
+          screen.textContent="";
+          screen.textContent = result;
+         
         
-
-         equals.addEventListener("click", ()=>{ 
-         screen.textContent = ""
-         screen.textContent = display;
-      })
+    });
          
 
        if (display === result && result !== 0){
@@ -151,7 +153,7 @@ buttons.forEach((btns)=>{
         console.log(display)
         result = calc.calculate(display);
         console.log(result);
-        display = result;
+       
      
          equals.addEventListener("click", ()=>{ 
          screen.textContent = ""
