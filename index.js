@@ -125,30 +125,40 @@ function populateScreen(){
    let result = 0;
     let display = "";
     let calc = new Calculation();
-  // if 
-operator.forEach((op)=> {
-   op.addEventListener("click", ()=>{
-     
-      equals.addEventListener("click", ()=>{ 
-         screen.textContent= display;
-      })
-//i///////////////////////////////////////////////e
+
+    //i///////////////////////////////////////////////e
 buttons.forEach((btns)=>{
 
       btns.addEventListener("click",(e)=>{
         display += e.target.value;
+        screen.textContent = display;
         console.log(display)
-         result = calc.calculate(display);
-         console.log(result);
-         display = result
+        result = calc.calculate(display);
+        console.log(result);
+        display = result;
+        
+
+
+         equals.addEventListener("click", ()=>{ 
+         screen.textContent = ""
+         screen.textContent = display;
+      })
          
         })
+
        
       })
+  // if 
+
+  if (display === result && result !== 0){
+operator.forEach((op)=> {
+   op.addEventListener("click", ()=>{
+     
     
-//i////////////////////////////////////////////////e     
+ 
    })
 })
+  }
    }
   
 
