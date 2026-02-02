@@ -138,27 +138,33 @@ buttons.forEach((btns)=>{
         display = result;
         
 
-
          equals.addEventListener("click", ()=>{ 
          screen.textContent = ""
          screen.textContent = display;
       })
          
+
+       if (display === result && result !== 0){
+ 
+        display += e.target.value;
+        screen.textContent = display;
+        console.log(display)
+        result = calc.calculate(display);
+        console.log(result);
+        display = result;
+     
+         equals.addEventListener("click", ()=>{ 
+         screen.textContent = ""
+         screen.textContent = display;
+      })
+  }
         })
 
        
       })
-  // if 
+  
 
-  if (display === result && result !== 0){
-operator.forEach((op)=> {
-   op.addEventListener("click", ()=>{
-     
-    
  
-   })
-})
-  }
    }
   
 
