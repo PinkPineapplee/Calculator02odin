@@ -165,7 +165,7 @@ buttons.forEach((btns)=>{
   
 
  
-   }
+   }populateScreen()
   
 
   
