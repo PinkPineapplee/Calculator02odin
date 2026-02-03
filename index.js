@@ -61,10 +61,10 @@ class Calculation {
    }
 
 
-   function performNewCalculation(num){
+   function performNewCalculation(){
   
-   let newCalc = new Calculation();
-
+   
+// turn on the calculator
     ac.addEventListener("click", () => {
 
       console.log("The calculator is starting...")
@@ -80,7 +80,7 @@ class Calculation {
    
    }
    else{
-    reset();
+    clear();
   }
   }) 
   }
