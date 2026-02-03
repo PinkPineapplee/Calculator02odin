@@ -105,7 +105,7 @@ buttons.forEach((btns)=>{
        if (display === result && result !== 0){
  
         display += e.target.value;
-        screen.textContent += display;
+        screen.textContent = display;
         console.log(display)
         result = newCalc.calculate(display);
         
@@ -120,7 +120,7 @@ buttons.forEach((btns)=>{
    
             screen.textContent = "";
             display += e.target.value; 
-            screen.textContent += display;
+            screen.textContent = display;
             console.log(display);
             result = newCalc.calculate(display);
            
