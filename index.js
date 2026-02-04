@@ -3,6 +3,7 @@ const equals = document.querySelector("#equals");
 const ac = document.querySelector("#ac");
 const screen = document.querySelector("#monitor");
 const operator = document.querySelector(".op")
+const numbers = document.querySelectorAll(".num")
 
 let calculatorStart = false;
  
@@ -52,11 +53,11 @@ class Calculation {
 // Returns to Default settings
    function clear(){ 
     if (ac.textContent==="C"){
-    result = 0;
-    display = "";
-    screen.textContent = "";
-    calculatorStart = false;
-    ac.textContent = "AC";
+         result = 0;
+         display = "";
+         screen.textContent = "";
+         calculatorStart = false;
+         ac.textContent = "AC";
     }
    }
 
@@ -72,7 +73,6 @@ function performNewCalculation(){
 
     // initiate values
    if (ac.textContent === "AC"){ 
-
         ac.textContent = "C";
         calculatorStart = true;
         screen.style.color= "white";
@@ -87,12 +87,8 @@ function performNewCalculation(){
  
 
 
-
-
-
-
 function populateScreen(){
-   let result = 0;
+    let result = 0;
     let display = "";
     let newCalc = new Calculation();
     performNewCalculation()
@@ -103,7 +99,13 @@ buttons.forEach((btns)=>{
             
    
        if (display === result && result !== 0){
- 
+         
+        numbers.forEach((numbtn)=>{
+         numbtn.addEventListener("click", ()=>{ 
+            screen.textContent = "";
+            display = "";})
+      })   
+
         display += e.target.value;
         screen.textContent = display;
         console.log(display)
@@ -116,6 +118,8 @@ buttons.forEach((btns)=>{
          screen.textContent = result;
          display = result;
       })
+
+      
   } else{
    
             screen.textContent = "";
@@ -132,9 +136,7 @@ buttons.forEach((btns)=>{
           display = result;
        
          
-    });  // write a conditional to clear screen when you want to populate the screen anew
-//         if (isNumber(e.target.value) ){// continue from here tomorrow!
-//          }
+    });  
   }
         })
 
