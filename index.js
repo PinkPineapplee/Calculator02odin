@@ -61,14 +61,14 @@ class Calculation {
    }
 
 
-   function performNewCalculation(){
+function performNewCalculation(){
   
    
 // turn on the calculator
     ac.addEventListener("click", () => {
 
       console.log("The calculator is starting...")
-     // setTimeout(screen.textContent = "The calculator is starting...", 3000)
+     screen.textContent = "The calculator is starting...";
 
     // initiate values
    if (ac.textContent === "AC"){ 
@@ -76,7 +76,7 @@ class Calculation {
         ac.textContent = "C";
         calculatorStart = true;
         screen.style.color= "white";
-        populateScreen(); 
+       
    
    }
    else{
@@ -84,7 +84,7 @@ class Calculation {
   }
   }) 
   }
- performNewCalculation()
+ 
 
 
 
@@ -95,7 +95,7 @@ function populateScreen(){
    let result = 0;
     let display = "";
     let newCalc = new Calculation();
-
+    performNewCalculation()
     //i///////////////////////////////////////////////e
 buttons.forEach((btns)=>{
 
@@ -114,7 +114,7 @@ buttons.forEach((btns)=>{
          equals.addEventListener("click", ()=>{ 
          screen.textContent = ""
          screen.textContent = result;
-         display= result;
+         display = result;
       })
   } else{
    
@@ -129,7 +129,7 @@ buttons.forEach((btns)=>{
         equals.addEventListener("click", () => {
           screen.textContent="";
           screen.textContent = result;
-          display= result;
+          display = result;
        
          
     });  // write a conditional to clear screen when you want to populate the screen anew
@@ -143,7 +143,7 @@ buttons.forEach((btns)=>{
   
 
  
-   }
+   } populateScreen(); 
   
 
  
